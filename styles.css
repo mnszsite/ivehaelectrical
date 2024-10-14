@@ -79,7 +79,7 @@ nav {
 
 /* Hero Section */
 .hero {
-  background-image: url("/images/logo_optimized-removebg-preview.png");
+  background-image: url("images/logo_optimized-removebg-preview.png");
   background-size: contain; /* Ensures the image covers the entire section */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
