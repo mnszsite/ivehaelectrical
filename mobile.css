@@ -1,0 +1,139 @@
+/* Media Queries ---- for nav bar and header */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: whitesmoke;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: x-large;
+    }
+  
+    .nav-links.nav-active {
+        display: flex;
+    }
+  
+    .burger {
+        display: flex;
+        
+    }
+  
+    .services-container, .team-container {
+        flex-direction: column;
+    }
+  
+    .service-item, .team-member {
+        flex: 1 1 100%;
+    }
+  }
+  
+
+/* Media Queries ---- for mobile devices */
+@media (max-width: 768px) {
+    .hero {
+      height: 40vh; /* Adjust height for mobile */
+    }
+    
+    .hero h1 {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+    
+    .hero p {
+      font-size: 1rem; /* Smaller font size for mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+  
+    .hero p {
+        font-size: 1rem;
+    }
+  }
+
+
+
+/* Media Queries --- for prject section*/
+@media (max-width: 768px) {
+    .project-item {
+        width: calc(45% - 20px); /* Adjust width for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-item {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
+
+
+/* Media Queries --- for prject section*/
+@media (max-width: 768px) {
+    .project-item {
+        width: calc(45% - 20px); /* Adjust width for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-item {
+        width: 100%; /* Full width on mobile */
+    }
+  }
+  
+
+
+/* Media Queries --- team members */
+@media (max-width: 768px) {
+    .team-member {
+        width: calc(45% - 20px); /* Adjust width for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .team-member {
+        width: 100%; /* Full width on mobile */
+    }
+  }
+
+  /* Media Queries -- for map section */
+@media (max-width: 768px) {
+    .map-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+  }
+
+
+
+  /* Media Queries --- for prject pages*/
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Initially hidden */
+    }
+  
+    .burger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+  
+    .burger div {
+        width: 30px;
+        height: 4px;
+        background: black;
+        margin: 4px 0;
+    }
+  
+    .projects-gallery {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+  }
+
+  

@@ -1,0 +1,788 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+header {
+  background: rgba(245, 245, 245, 0.747);
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10; /* Ensure the header is above the hero */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the image and the text */
+}
+
+.logo img {
+  height: 80px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+  border-color: #fff;
+}
+
+.logo span {
+  font-size: 1.5rem; /* Larger font size for the logo text */
+  font-weight: bold; /* Make the text bold */
+  color: rgb(7, 7, 7); /* Change to your preferred color */
+  text-transform: uppercase; /* Make the text uppercase for emphasis */
+  letter-spacing: 1px; /* Space out the letters a bit */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: x-large;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: rgb(29, 29, 28);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px;
+  transition: 0.3s;
+}
+
+
+/* Hero Section */
+.hero {
+  background-image: url("/images/logo_optimized-removebg-preview.png");
+  background-size: contain; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  position: relative; /* Establish a positioning context */
+  color: whitesmoke;
+  text-align: center;
+  padding: 60px 20px;
+  height: 100vh; /* Set a height for the hero section */
+  display: flex; /* Use Flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  z-index: 1; /* Keep hero section below the header */
+}
+
+.hero::before {
+  content: ""; /* Empty content for the overlay */
+  position: absolute; /* Position it over the hero section */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.726); /* Semi-transparent black for fade effect */
+  z-index: 1; /* Place it below the text */
+}
+
+.hero h1, .hero p, .hero a {
+  position: relative; /* Position text above the overlay */
+  z-index: 2; /* Ensure text is above the overlay */
+  text-align: center; /* Center the text */
+  margin: 0 auto; /* Center block elements */
+  max-width: 800px; /* Optional: limit width for better readability */
+}
+
+.hero h1 {
+  font-size: 2.5rem; /* Adjust font size for the heading */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.hero p {
+  font-size: 1.2rem; /* Adjust font size for the paragraph */
+  margin-bottom: 20px; /* Space below paragraph */
+}
+
+.hero a {
+  display: inline-block; /* Makes the anchor a block for easier centering */
+  padding: 10px 20px; /* Add padding for button-like appearance */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for contrast */
+  color: black; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.hero a:hover {
+  background-color: rgba(255, 255, 255, 1); /* Change background on hover */
+}
+
+#hero-btn{
+  background-color: #52ff2f;
+}
+
+
+
+/* Sections */
+section {
+  padding: 40px 20px;
+}
+
+h2 {
+  color: red;
+  margin-bottom: 20px;
+}
+
+/* Services */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 calc(30% - 20px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+/* project section */
+.projects {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.projects h1 {
+  color: red; /* Heading color */
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.project-gallery {
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align project items */
+  gap: 20px; /* Space between items */
+}
+
+.project-item img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-bottom: 2px solid rgb(13, 122, 55); /* Add a bottom border for a stylish look */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.project-item:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+.project-item {
+  background: #fff; /* White background for project item */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevent overflow */
+  transition: transform 0.3s; /* Smooth scaling effect */
+  width: calc(30% - 20px); /* Set width for larger screens */
+}
+
+.project-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.project-info {
+  padding: 20px; /* Add padding */
+  text-align: left; /* Align text to the left */
+}
+
+.project-info h4 {
+  color: green; /* Heading color for project */
+  margin: 10px 0;
+}
+
+.project-info p {
+  margin-bottom: 15px; /* Space below paragraph */
+}
+
+.project-info ol {
+  list-style: none; /* Remove default list style */
+  padding-left: 0; /* Remove padding */
+}
+
+.project-info li {
+  position: relative; /* Position for pseudo-element */
+  padding-left: 30px; /* Space for icon */
+  margin-bottom: 10px; /* Space between items */
+  font-size: 1rem; /* Font size */
+  color: #555; /* Dark grey for text */
+}
+
+.project-info li::before {
+  content: '✔'; /* Check mark or any icon */
+  position: absolute;
+  left: 0;
+  color: green; /* Color for the icon */
+  font-size: 1.2rem; /* Size of the icon */
+}
+
+
+
+/* team sections */
+.team {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.team h2 {
+  color: red; /* Heading color */
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the team members */
+  gap: 20px; /* Space between items */
+}
+
+.team-member {
+  background: #fff; /* White background for team member card */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent overflow */
+  transition: transform 0.3s; /* Smooth scaling effect */
+  width: calc(25% - 20px); /* Set width to 25% with gap */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center align the items */
+  padding: 20px; /* Padding inside the member card */
+}
+
+.team-member:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.team-member img {
+  width: 100px; /* Fixed width for faces */
+  height: 100px; /* Fixed height for faces */
+  border-radius: 50%; /* Circular shape */
+  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  border: 3px solid green; /* Optional: add a border for emphasis */
+  margin-top: 20px; /* Space above the image */
+}
+
+.team-member h3 {
+  color: green; /* Name color */
+  margin: 15px 0 5px;
+}
+
+.team-member p {
+  margin: 0 0 15px; /* Space below position */
+  color: #555; /* Dark grey for text */
+}
+
+
+
+/* map section */
+.map-section {
+  background: #fff; /* White background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.map-section h2 {
+  color: red; /* Heading color */
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.map-container {
+  max-width: 1000px; /* Set max width for larger screens */
+  margin: 0 auto; /* Center the map */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.map-container iframe {
+  width: 100%; /* Make iframe responsive */
+  height: 450px; /* Fixed height for iframe */
+  border: 0; /* Remove default border */
+}
+
+
+
+/* Footer Styles */
+footer {
+  background: rgba(5, 5, 5, 0.267); /* Dark background for contrast */
+  color: #111111; /* White text for readability */
+  padding: 20px 0; /* Vertical padding */
+  text-align: center; /* Center align text */
+}
+
+.footer-container {
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align items */
+  gap: 20px; /* Space between items */
+}
+
+.footer-contact {
+  margin-bottom: 10px; /* Space below contact section */
+}
+
+.footer-contact h3 {
+  color: #134d07; /* Heading color */
+}
+
+.footer-contact a {
+  text-decoration: none; /* Remove underline from links */
+  color: rgb(24, 23, 23); /* Link color */
+}
+
+.footer-contact a:hover {
+  text-decoration: underline; /* Optional: add underline on hover for clarity */
+}
+
+.footer-contact, .footer-social h3 {
+  color: rgb(6, 71, 6); /* Highlight heading */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.footer-contact p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-style: none; /* Remove italic style */
+}
+
+.footer-social {
+  margin-top: 10px; /* Space above social links */
+}
+
+.footer-social h3 {
+  color: #0a2b03; /* Heading color */
+}
+
+.social-links a {
+  color: #123504; /* White color for icons */
+  margin: 0 10px; /* Space between icons */
+  font-size: 1.5rem; /* Size of icons */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-links a:hover {
+  color: rgb(8, 161, 33); /* Change color on hover */
+}
+
+footer p {
+  margin-top: 20px; /* Space above copyright text */
+  font-size: 0.9rem; /* Smaller font size for copyright */
+}
+
+/* New styles for design credit */
+footer p:last-child {
+  margin-top: 10px; /* Space above design credit */
+  font-size: 0.8rem; /* Slightly smaller font size for design credit */
+  color: #04301e; /* Color for design credit */
+}
+
+.legal-link {
+  color: #03220d; /* Bright color for privacy policy link */
+}
+
+
+/* Service Page Styles */
+/* Services Introduction Section */
+.service-intro {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px; /* Padding for top and bottom */
+  text-align: center; /* Center align text */
+}
+
+.service-intro h1 {
+  color: red; /* Heading color */
+  margin-bottom: 20px; /* Space below heading */
+  font-size: 2.5rem; /* Larger font size for the main heading */
+}
+
+.service-intro p {
+  font-size: 1.2rem; /* Font size for paragraph */
+  color: #333; /* Dark grey for readability */
+}
+
+/* Services Details Section */
+.services-details {
+  padding: 40px 20px; /* Padding for section */
+}
+
+.services-details h2 {
+  color: red; /* Heading color */
+  margin-bottom: 30px; /* Space below heading */
+  font-size: 2rem; /* Font size for subheading */
+}
+
+.service-item {
+  background: white; /* White background for service items */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside item */
+  margin-bottom: 20px; /* Space between items */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.service-item h3 {
+  color: green; /* Heading color for category */
+  margin-bottom: 10px; /* Space below category heading */
+}
+
+/* Checkmark Styles */
+.service-item ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+}
+
+.service-item li {
+  color: #555; /* Dark grey for text */
+  margin: 10px 0; /* Space between items */
+}
+
+.service-item li::before {
+  content: "\2713"; /* Checkmark character */
+  color: green; /* Color for checkmark */
+  margin-right: 10px; /* Space between checkmark and text */
+}
+
+
+
+
+
+/* Call to Action Section */
+.cta {
+  background: #125e03; /* Bright background for CTA */
+  color: #fff; /* White text */
+  padding: 40px 20px; /* Padding for section */
+  text-align: center; /* Center align text */
+}
+
+.cta h2 {
+  font-size: 2rem; /* Font size for CTA heading */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.cta p {
+  font-size: 1.2rem; /* Font size for CTA paragraph */
+  margin-bottom: 20px; /* Space below paragraph */
+}
+
+.cta .btn {
+  background-color: #333; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 20px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.cta .btn:hover {
+  background-color: yellow; /* Change button color on hover */
+}
+
+
+
+
+/* Contact Page Styles */
+
+/* Contact Intro Section and page style */
+.contact-intro {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact-intro h1 {
+  color: red; /* Heading color */
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Adjust font size */
+}
+
+.contact-intro p {
+  font-size: 1.1rem; /* Slightly larger font for readability */
+  color: #555; /* Dark grey for text */
+}
+
+
+/* Contact Information Section */
+.contact-info {
+  background: #fff; /* White background */
+  padding: 30px 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px auto;
+  max-width: 800px; /* Limit width for readability */
+  text-align: left; /* Align text to the left */
+}
+
+.contact-info h2 {
+  color: green; /* Heading color */
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px; /* Space between paragraphs */
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  background: #fff; /* White background */
+  padding: 30px 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px auto;
+  max-width: 800px; /* Limit width for readability */
+}
+
+.contact-form-section h2 {
+  color: green; /* Heading color */
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column; /* Stack form fields vertically */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 10px;
+  margin-bottom: 15px; /* Space between fields */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+}
+
+.contact-form select {
+  background: #f9f9f9; /* Light background for dropdowns */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.contact-form textarea {
+  width: 100%; /* Full width */
+  height: 120px; /* Increased height */
+  padding: 10px; /* Padding for better text placement */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Increased font size */
+  resize: vertical; /* Allow vertical resizing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.contact-form button {
+  background-color: green; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1rem; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.contact-form button:hover {
+  background-color: darkgreen; /* Darker shade on hover */
+}
+
+.contact-method {
+  margin: 15px 0;
+}
+
+.contact-method label {
+  margin-right: 20px;
+}
+
+
+
+
+/* Call to Action Section */
+.cta {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  color: red; /* Heading color */
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: #555; /* Dark grey for text */
+}
+
+
+/* About Us Page Styles */
+
+/* About Intro Section */
+.about-intro {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-intro h1 {
+  color: red; /* Heading color */
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Adjust font size */
+}
+
+.about-intro p {
+  font-size: 1.1rem; /* Slightly larger font for readability */
+  color: #555; /* Dark grey for text */
+}
+
+/* Center all heading tags */
+h1, h2, h3 {
+  text-align: center; /* Center align all headings */
+}
+
+/* Company History Section */
+.company-history,
+.mission-values {
+  background: #fff; /* White background */
+  padding: 30px 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px auto; /* Centered margin */
+  max-width: 800px; /* Limit width for readability */
+}
+
+.company-history h2,
+.mission-values h2 {
+  color: green; /* Heading color */
+  margin-bottom: 20px;
+}
+
+/* Our Goal Section Styles */
+.our-goal {
+  background: #ffffff; /* White background for contrast */
+  padding: 30px 20px; /* Padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px auto; /* Centered margin */
+  max-width: 800px; /* Limit width for readability */
+  text-align: center; /* Center align text */
+}
+
+.our-goal h2 {
+  color: green; /* Header color */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+
+/* Team Members Section */
+.team-members {
+  padding: 40px 20px;
+  text-align: center; /* Center align headings */
+}
+
+.team-member {
+  display: inline-block; /* Align team members in a row */
+  width: calc(33% - 40px); /* Three members per row with spacing */
+  margin: 10px; /* Space between members */
+  background: #fff; /* White background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside member card */
+}
+
+.team-member-img {
+  width: 100%; /* Responsive images */
+  border-radius: 10px; /* Rounded corners */
+}
+
+
+.team-member i {
+  font-size: 70px; /* Size of the icon */
+  border: 3px solid green; /* Border around the icon */
+  border-radius: 50%; /* Makes it circular */
+  padding: 15px; /* Adds space inside the border */
+  background: #fff; /* Optional: white background for the icon */
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+
+.team-member h3 {
+  color: green; /* Name color */
+  margin: 10px 0; /* Space around name */
+}
+
+.team-member p {
+  font-weight: bold; /* Make position text bold */
+  color: #333; /* Text color */
+  margin: 5px 0; /* Space above and below */
+}
+
+.team-member p:last-child {
+  font-weight: normal; /* Regular weight for description */
+  color: #555; /* Slightly lighter for description */
+}
+
+
+/* Management Team Section Styles */
+.management-team {
+  background-color: #ffffff; /* White background for contrast */
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.management-team h2 {
+  color: green; /* Header color */
+  margin-bottom: 15px; /* Space below the header */
+}
+
+.management-team p {
+  color: #333; /* Text color */
+  line-height: 1.6; /* Better readability */
+  margin-bottom: 10px; /* Space between paragraphs */
+}
+
+
+
+
