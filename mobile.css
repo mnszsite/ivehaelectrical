@@ -1,139 +1,124 @@
-/* Media Queries ---- for nav bar and header */
+/* Mobile view (below 768px) */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: whitesmoke;
-        position: absolute;
-        top: 85px;
-        right: 0;
-        width: 100%;
-        padding: 10px;
-        text-align: center;
-        font-size: x-large;
-    }
-  
-    .nav-links.nav-active {
-        display: flex;
-    }
-  
-    .burger {
-        display: flex;
-        
-    }
-  
-    .services-container, .team-container {
-        flex-direction: column;
-    }
-  
-    .service-item, .team-member {
-        flex: 1 1 100%;
-    }
-  }
-  
-
-/* Media Queries ---- for mobile devices */
-@media (max-width: 768px) {
-    .hero {
-      height: 40vh; /* Adjust height for mobile */
-    }
-    
-    .hero h1 {
-      font-size: 2rem; /* Smaller font size for mobile */
-    }
-    
-    .hero p {
-      font-size: 1rem; /* Smaller font size for mobile */
-    }
+  nav {
+    padding: 15px 20px; /* Adjust padding for smaller screens */
   }
 
-  @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-  
-    .hero p {
-        font-size: 1rem;
-    }
+  nav .logo {
+    margin-right: auto; /* Push the logo to the left */
+  }
+
+  nav .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 65px; /* Adjust to fit your header height */
+    left: 0; /* Make sure the background spans from the left edge */
+    width: 100vw; /* Ensure the background spans the full width of the viewport */
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+
+  nav .nav-links.nav-active {
+    display: flex; /* Show links when active */
+  }
+
+  nav .nav-links li {
+    margin: 10px 0; /* Space out menu items in mobile view */
+  }
+
+  nav .nav-links li a {
+    font-size: 1.5rem;
+  }
+
+  nav .burger {
+    display: flex; /* Show burger on mobile */
   }
 
 
-
-/* Media Queries --- for prject section*/
-@media (max-width: 768px) {
-    .project-item {
-        width: calc(45% - 20px); /* Adjust width for tablets */
-    }
 }
 
-@media (max-width: 480px) {
-    .project-item {
-        width: 100%; /* Full width on mobile */
-    }
+/* hero */
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover;  /* Use 'cover' instead of 'contain' for a better responsive fit */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    padding: 60px 15px; /* Reduced padding for mobile */
+    background-size: cover; /* Ensure the background image covers the section */
+    background-position: center top; /* Align the image better for mobile */
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;  /* Adjust the heading size for smaller screens */
+    margin-bottom: 15px; /* Reduced margin for smaller screens */
+  }
+
+  .hero-text p {
+    font-size: 1rem;  /* Adjust the paragraph text size */
+    margin-bottom: 15px; /* Reduced margin for better spacing */
+  }
+
+  .hero .btn {
+    padding: 12px 25px; /* Reduced padding for the button */
+    font-size: 0.9rem; /* Slightly smaller button text */
+  }
 }
 
 
 
-/* Media Queries --- for prject section*/
+/* Explore Button Styling */
+#explore-btn {
+  background-color: green; /* Blue background color */
+  color: #fff;  /* White text color */
+  padding: 15px 30px;  /* Padding around the text */
+  font-size: 1.5rem;  /* Font size */
+  font-weight: bold;  /* Bold text */
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 5px;  /* Rounded corners */
+  text-decoration: none;  /* Remove underline */
+  display: inline-block;  /* Make the link behave like a button */
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition effects */
+}
+
+/* Hover effect for Explore Button */
+#explore-btn:hover {
+  background-color: rgb(2, 83, 2);  /* Darker blue background on hover */
+  transform: translateY(-3px);  /* Slight lift on hover */
+}
+
+/* Focus effect for Explore Button */
+#explore-btn:focus {
+  outline: none;  /* Remove default focus outline */
+  box-shadow: 0 0 5px rgba(0, 68, 204, 0.8);  /* Blue glow on focus */
+}
+
+/* Mobile-specific styles */
 @media (max-width: 768px) {
-    .project-item {
-        width: calc(45% - 20px); /* Adjust width for tablets */
-    }
+  #explore-btn {
+    font-size: 1rem;  /* Slightly smaller font size on mobile */
+    padding: 12px 25px;  /* Reduced padding on mobile */
   }
-  
-  @media (max-width: 480px) {
-    .project-item {
-        width: 100%; /* Full width on mobile */
-    }
-  }
-  
+}
 
 
-/* Media Queries --- team members */
+/* team member */
 @media (max-width: 768px) {
-    .team-member {
-        width: calc(45% - 20px); /* Adjust width for tablets */
-    }
+  .team-member i {
+    font-size: 70px;
+    color: rgba(0, 0, 0, 0.877);
+    margin-bottom: 15px;
+    border: 2px solid green;
+    width: 100px;             /* Set a fixed width */
+    height: 100px;            /* Set a fixed height to maintain square shape */
+    border-radius: 50%;       /* Make the border circular */
+    padding: 10px;            /* Add padding around the icon */
   }
-  
-  @media (max-width: 480px) {
-    .team-member {
-        width: 100%; /* Full width on mobile */
-    }
-  }
-
-  /* Media Queries -- for map section */
-@media (max-width: 768px) {
-    .map-container {
-        height: 300px; /* Adjust height for smaller screens */
-    }
-  }
-
-
-
-  /* Media Queries --- for prject pages*/
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        display: none; /* Initially hidden */
-    }
-  
-    .burger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-    }
-  
-    .burger div {
-        width: 30px;
-        height: 4px;
-        background: black;
-        margin: 4px 0;
-    }
-  
-    .projects-gallery {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
-  }
-
-  
+}
